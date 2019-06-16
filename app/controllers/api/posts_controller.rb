@@ -9,7 +9,6 @@ class Api::PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
     if @post.save
       render :show, status: :created
     else
@@ -31,7 +30,7 @@ class Api::PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.fetch(:post, {}).permit(
-          :title, :firstContent, :secondContent, :thirdContent, :forthContent, :fifthContent, :rname
+          :title, :firstContent, :secondContent, :thirdContent, :forthContent, :fifthContent, :rname, :is_display, :status
       )
     end
 end

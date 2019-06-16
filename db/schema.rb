@@ -13,13 +13,15 @@
 ActiveRecord::Schema.define(version: 2019_05_24_164906) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "firstContent", null: false
+    t.string "title"
+    t.text "firstContent"
     t.text "secondContent"
     t.text "thirdContent"
     t.text "forthContent"
     t.text "fifthContent"
     t.string "rname"
+    t.boolean "is_display", default: true
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
